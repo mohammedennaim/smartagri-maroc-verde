@@ -12,10 +12,11 @@ import { RoadmapSection } from "@/components/sections/RoadmapSection";
 import { ResultsSection } from "@/components/sections/ResultsSection";
 import { ConclusionSection } from "@/components/sections/ConclusionSection";
 import { CTASection } from "@/components/sections/CTASection";
+import { ChatBot } from "@/components/ChatBot";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/30">
       <Navigation />
       <HeroSection />
       <ProblemSection />
@@ -30,6 +31,7 @@ const Index = () => {
       <ResultsSection />
       <ConclusionSection />
       <CTASection />
+      <ChatBot />
     </div>
   );
 };

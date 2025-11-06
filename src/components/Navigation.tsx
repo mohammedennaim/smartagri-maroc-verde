@@ -34,16 +34,16 @@ export const Navigation = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/95 backdrop-blur-md shadow-md" : "bg-transparent"
+        scrolled ? "bg-background/80 backdrop-blur-xl shadow-lg border-b border-border/50" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <div className="flex items-center gap-2 cursor-pointer" onClick={() => scrollToSection("#home")}>
-            <div className="p-2 rounded-lg bg-gradient-to-br from-primary to-secondary">
+          <div className="flex items-center gap-2 cursor-pointer group" onClick={() => scrollToSection("#home")}>
+            <div className="p-2 rounded-xl bg-gradient-to-br from-primary to-primary-light shadow-lg group-hover:scale-110 transition-transform">
               <Leaf className="h-6 w-6 text-white" />
             </div>
-            <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-primary via-primary-light to-secondary bg-clip-text text-transparent">
               SmartAgri Maroc
             </span>
           </div>
@@ -54,12 +54,13 @@ export const Navigation = () => {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className="text-foreground hover:text-primary transition-colors font-medium"
+                className="text-foreground/80 hover:text-primary transition-all font-medium relative group"
               >
                 {item.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
               </button>
             ))}
-            <Button variant="hero" onClick={() => scrollToSection("#contact")}>
+            <Button variant="hero" onClick={() => scrollToSection("#contact")} className="shadow-lg hover:shadow-xl">
               Investir
             </Button>
           </div>
@@ -67,7 +68,7 @@ export const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-primary/10 text-foreground hover:text-primary transition-colors"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -75,19 +76,19 @@ export const Navigation = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden py-4 bg-background/95 backdrop-blur-md animate-fade-in">
-            <div className="flex flex-col gap-4">
+          <div className="md:hidden py-4 bg-background/95 backdrop-blur-xl rounded-b-2xl border-b border-border/50 shadow-xl animate-fade-in">
+            <div className="flex flex-col gap-2">
               {navItems.map((item) => (
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-left px-4 py-2 text-foreground hover:text-primary transition-colors font-medium"
+                  className="text-left px-4 py-3 rounded-lg text-foreground/80 hover:text-primary hover:bg-primary/5 transition-all font-medium"
                 >
                   {item.label}
                 </button>
               ))}
-              <div className="px-4">
-                <Button variant="hero" className="w-full" onClick={() => scrollToSection("#contact")}>
+              <div className="px-4 pt-2">
+                <Button variant="hero" className="w-full shadow-lg" onClick={() => scrollToSection("#contact")}>
                   Investir
                 </Button>
               </div>

@@ -5,8 +5,11 @@ import { Card } from "@/components/ui/card";
 
 export const ProblemSection = () => {
   return (
-    <section id="problem" className="py-24 bg-gradient-to-b from-background to-muted/30">
-      <div className="container mx-auto px-4">
+    <section id="problem" className="py-24 relative overflow-hidden">
+      {/* Background gradient mesh */}
+      <div className="absolute inset-0" style={{ backgroundImage: 'var(--gradient-mesh)' }} />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <SectionTitle
           title="La Problématique"
           subtitle="Le Maroc fait face à une crise hydrique majeure qui impacte directement l'agriculture"
@@ -45,7 +48,7 @@ export const ProblemSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <Card className="p-8 bg-gradient-to-br from-destructive/10 to-orange-500/10 border-destructive/20 animate-fade-in">
+          <Card className="p-8 glass-card hover-lift border-destructive/20 animate-fade-in">
             <h3 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-2">
               <AlertTriangle className="h-6 w-6 text-destructive" />
               Défis pour les petits agriculteurs
@@ -74,7 +77,7 @@ export const ProblemSection = () => {
             </ul>
           </Card>
 
-          <Card className="p-8 bg-gradient-to-br from-secondary/10 to-primary/10 border-secondary/20 animate-fade-in">
+          <Card className="p-8 glass-card hover-lift border-secondary/20 animate-fade-in">
             <h3 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-2">
               <Droplet className="h-6 w-6 text-secondary" />
               Impact environnemental
