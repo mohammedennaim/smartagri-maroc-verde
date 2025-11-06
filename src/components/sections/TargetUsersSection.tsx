@@ -1,16 +1,15 @@
 import { SectionTitle } from "@/components/SectionTitle";
 import { Card } from "@/components/ui/card";
 import { Users, Building2, Check } from "lucide-react";
+import { useLanguage } from "@/contexts/language";
 
 export const TargetUsersSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="py-24 bg-gradient-to-b from-muted/30 to-background">
       <div className="container mx-auto px-4">
-        <SectionTitle
-          title="Nos Utilisateurs Cibles"
-          subtitle="Des solutions adaptées à chaque type d'agriculteur"
-          centered
-        />
+        <SectionTitle title={t("targetUsers.title")} subtitle={t("targetUsers.subtitle")} centered />
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Small Farmers */}
@@ -20,8 +19,8 @@ export const TargetUsersSection = () => {
                 <Users className="h-8 w-8 text-white" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-foreground">Petits agriculteurs</h3>
-                <p className="text-sm text-muted-foreground">85% des exploitations marocaines</p>
+                <h3 className="text-2xl font-bold text-foreground">{t("targetUsers.small.heading")}</h3>
+                <p className="text-sm text-muted-foreground">{t("targetUsers.small.lead")}</p>
               </div>
             </div>
 
@@ -29,33 +28,31 @@ export const TargetUsersSection = () => {
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                 <p className="text-muted-foreground">
-                  <span className="font-semibold text-foreground">Kit Plug & Play:</span> Installation simple en 30 minutes
+                  <span className="font-semibold text-foreground">{t("targetUsers.small.features.f1.strong")}</span> {t("targetUsers.small.features.f1.text")}
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                 <p className="text-muted-foreground">
-                  <span className="font-semibold text-foreground">Alertes SMS:</span> Notifications même sans smartphone
+                  <span className="font-semibold text-foreground">{t("targetUsers.small.features.f2.strong")}</span> {t("targetUsers.small.features.f2.text")}
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                 <p className="text-muted-foreground">
-                  <span className="font-semibold text-foreground">Support vocal:</span> Instructions en Darija
+                  <span className="font-semibold text-foreground">{t("targetUsers.small.features.f3.strong")}</span> {t("targetUsers.small.features.f3.text")}
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                 <p className="text-muted-foreground">
-                  <span className="font-semibold text-foreground">ROI rapide:</span> Retour sur investissement en 3-4 mois
+                  <span className="font-semibold text-foreground">{t("targetUsers.small.features.f4.strong")}</span> {t("targetUsers.small.features.f4.text")}
                 </p>
               </div>
             </div>
 
             <div className="p-4 rounded-lg bg-primary/10 border border-primary/20">
-              <p className="text-sm text-center text-muted-foreground">
-                Prix estimé: <span className="text-xl font-bold text-primary">2 500-3 000 DH</span>
-              </p>
+              <p className="text-sm text-center text-muted-foreground">{t("targetUsers.small.price")}</p>
             </div>
           </Card>
 
@@ -66,8 +63,8 @@ export const TargetUsersSection = () => {
                 <Building2 className="h-8 w-8 text-white" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-foreground">Grands agriculteurs</h3>
-                <p className="text-sm text-muted-foreground">Exploitations industrielles</p>
+                <h3 className="text-2xl font-bold text-foreground">{t("targetUsers.large.heading")}</h3>
+                <p className="text-sm text-muted-foreground">{t("targetUsers.large.lead")}</p>
               </div>
             </div>
 
@@ -75,33 +72,31 @@ export const TargetUsersSection = () => {
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-secondary mt-0.5 flex-shrink-0" />
                 <p className="text-muted-foreground">
-                  <span className="font-semibold text-foreground">Gestion multi-parcelles:</span> Vue d'ensemble complète
+                  <span className="font-semibold text-foreground">{t("targetUsers.large.features.f1.strong")}</span> {t("targetUsers.large.features.f1.text")}
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-secondary mt-0.5 flex-shrink-0" />
                 <p className="text-muted-foreground">
-                  <span className="font-semibold text-foreground">Dashboard avancé:</span> Analytics et rapports détaillés
+                  <span className="font-semibold text-foreground">{t("targetUsers.large.features.f2.strong")}</span> {t("targetUsers.large.features.f2.text")}
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-secondary mt-0.5 flex-shrink-0" />
                 <p className="text-muted-foreground">
-                  <span className="font-semibold text-foreground">IA prédictive:</span> Recommandations personnalisées
+                  <span className="font-semibold text-foreground">{t("targetUsers.large.features.f3.strong")}</span> {t("targetUsers.large.features.f3.text")}
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="h-5 w-5 text-secondary mt-0.5 flex-shrink-0" />
                 <p className="text-muted-foreground">
-                  <span className="font-semibold text-foreground">API intégration:</span> Compatible avec vos systèmes
+                  <span className="font-semibold text-foreground">{t("targetUsers.large.features.f4.strong")}</span> {t("targetUsers.large.features.f4.text")}
                 </p>
               </div>
             </div>
 
             <div className="p-4 rounded-lg bg-secondary/10 border border-secondary/20">
-              <p className="text-sm text-center text-muted-foreground">
-                Solution sur mesure avec <span className="text-xl font-bold text-secondary">support premium</span>
-              </p>
+              <p className="text-sm text-center text-muted-foreground">{t("targetUsers.large.footer")}</p>
             </div>
           </Card>
         </div>

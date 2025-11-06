@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Droplet, Sun, Sprout, ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-agriculture.jpg";
+import { useLanguage } from "@/contexts/language";
 
 export const HeroSection = () => {
+  const { t } = useLanguage();
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -18,6 +20,8 @@ export const HeroSection = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-secondary/10" />
         <div className="absolute inset-0" style={{ backgroundImage: 'var(--gradient-mesh)' }} />
+        <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-secondary/10 blur-3xl" />
       </div>
 
       {/* Content */}
@@ -37,57 +41,65 @@ export const HeroSection = () => {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary via-primary-light to-secondary bg-clip-text text-transparent mb-6 leading-tight">
-            SmartAgri Maroc
+            SmartAgri
           </h1>
           <p className="text-2xl md:text-3xl text-foreground/90 mb-4 font-semibold">
-            Système intelligent de gestion de l'irrigation et du suivi agricole
+            {t("hero.subtitle")}
           </p>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl">
-            Une solution low-cost adaptée au contexte marocain
+            {t("hero.lead")}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Button
               size="lg"
               variant="hero"
-              className="text-lg px-8 py-6 shadow-xl hover:shadow-2xl"
+                aria-label={t("hero.discover")}
+              className="text-lg px-8 py-4 rounded-full shadow-xl hover:shadow-2xl transform-gpu hover:-translate-y-0.5 transition-transform"
               onClick={() => scrollToSection("solution")}
             >
-              Découvrir la solution
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <span className="inline-flex items-center gap-3">
+                <span>{t("hero.discover")}</span>
+                <ArrowRight className="ml-1 h-5 w-5" />
+              </span>
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="text-lg px-8 py-6 border-2 shadow-lg hover:shadow-xl"
+              aria-label={t("hero.contact")}
+              className="text-lg px-8 py-4 rounded-full border-2 shadow-lg hover:shadow-xl transform-gpu hover:-translate-y-0.5 transition-transform"
               onClick={() => scrollToSection("contact")}
             >
-              Nous contacter
+              {t("hero.contact")}
             </Button>
           </div>
 
           {/* Modern Stats Cards */}
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { value: "20-40%", label: "Économie d'eau", icon: Droplet, color: "primary" },
-              { value: "30%", label: "Économie d'énergie", icon: Sun, color: "secondary" },
-              { value: "95%", label: "Précision capteurs", icon: Sprout, color: "accent" },
-              { value: "3-4 mois", label: "ROI", icon: ArrowRight, color: "primary" },
-            ].map((stat, index) => (
-              <div
-                key={index}
-                className="group text-center p-6 rounded-2xl bg-card/50 backdrop-blur-xl border border-border/50 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 animate-fade-in-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <stat.icon className={`h-8 w-8 mx-auto mb-3 text-${stat.color} group-hover:scale-110 transition-transform`} />
-                <p className="text-3xl font-bold bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent mb-1">{stat.value}</p>
-                <p className="text-sm text-muted-foreground">{stat.label}</p>
-              </div>
-            ))}
+              { key: "s1", icon: Droplet, color: "primary" },
+              { key: "s2", icon: Sun, color: "secondary" },
+              { key: "s3", icon: Sprout, color: "accent" },
+              { key: "s4", icon: ArrowRight, color: "primary" },
+            ].map((stat, index) => {
+              const Icon = stat.icon;
+              return (
+                <div
+                  key={index}
+                  className="group text-center p-6 rounded-2xl bg-card/60 backdrop-blur-xl border border-border/50 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 animate-fade-in-up"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 mb-3">
+               <Icon className={"h-7 w-7 text-" + stat.color + " group-hover:scale-110 transition-transform"} />
+                  </div>
+              <p className="text-3xl font-bold bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent mb-1 tracking-tight">{t('hero.stats.' + stat.key + '.value')}</p>
+              <p className="text-sm text-muted-foreground">{t('hero.stats.' + stat.key + '.label')}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
-
       {/* Modern Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-8 h-12 rounded-full border-2 border-primary/30 flex items-start justify-center p-2 backdrop-blur-sm bg-background/20">

@@ -17,17 +17,18 @@ export const StatCard = ({ icon: Icon, value, label, trend, color = "green" }: S
   };
 
   return (
-    <Card className="p-6 hover:shadow-lg transition-all animate-fade-in-up">
-      <div className={`inline-flex p-3 rounded-lg bg-gradient-to-br ${colorClasses[color]} mb-4`}>
+    <Card className="p-6 bg-background/60 backdrop-blur-sm border-border/60 hover:shadow-xl hover:-translate-y-1 transition-all animate-fade-in-up">
+      <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${colorClasses[color]} shadow-md mb-4`}>
         <Icon className="h-6 w-6 text-white" />
       </div>
       <div className="space-y-1">
-        <p className="text-3xl font-bold text-foreground">{value}</p>
+        <p className="text-3xl font-bold text-foreground tracking-tight">{value}</p>
         <p className="text-sm text-muted-foreground">{label}</p>
         {trend && (
           <p className="text-xs font-medium text-primary mt-2">{trend}</p>
         )}
       </div>
+      <div className="mt-4 h-px w-full bg-gradient-to-r from-transparent via-border to-transparent" />
     </Card>
   );
 };

@@ -1,54 +1,30 @@
 import { SectionTitle } from "@/components/SectionTitle";
 import { Card } from "@/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
+import { useLanguage } from "@/contexts/language";
 
 export const RoadmapSection = () => {
-  const phases = [
-    {
-      week: "Semaine 1-2",
-      title: "MVP & Conception",
-      tasks: [
-        "Architecture système complète",
-        "Sélection composants optimaux",
-        "Développement app prototype",
-        "Tests capteurs individuels",
-      ],
-      status: "completed",
-    },
-    {
-      week: "Semaine 3-4",
-      title: "Prototype physique",
-      tasks: [
-        "Assemblage hardware complet",
-        "Intégration ESP32 & capteurs",
-        "Installation système solaire",
-        "Tests en conditions réelles",
-      ],
-      status: "completed",
-    },
-    {
-      week: "Semaine 5-6",
-      title: "Version Beta",
-      tasks: [
-        "Déploiement chez 5 agriculteurs",
-        "Collecte feedback utilisateurs",
-        "Ajustements UI/UX",
-        "Optimisation algorithmes IA",
-      ],
-      status: "in-progress",
-    },
-    {
-      week: "Semaine 7-8",
-      title: "Version finale",
-      tasks: [
-        "Corrections bugs identifiés",
-        "Documentation complète",
-        "Formation utilisateurs",
-        "Lancement commercial",
-      ],
-      status: "upcoming",
-    },
+  const { t } = useLanguage();
+
+  // Define the sequence and status for each phase; textual content pulled from translations
+  const phaseDefs = [
+    { key: "p1", status: "completed" },
+    { key: "p2", status: "completed" },
+    { key: "p3", status: "in-progress" },
+    { key: "p4", status: "upcoming" },
   ];
+
+  const phases = phaseDefs.map((d) => ({
+    week: t(`roadmap.phases.${d.key}.week`),
+    title: t(`roadmap.phases.${d.key}.title`),
+    tasks: [
+      t(`roadmap.phases.${d.key}.tasks.t1`),
+      t(`roadmap.phases.${d.key}.tasks.t2`),
+      t(`roadmap.phases.${d.key}.tasks.t3`),
+      t(`roadmap.phases.${d.key}.tasks.t4`),
+    ],
+    status: d.status,
+  }));
 
   const statusColors = {
     completed: "from-primary to-primary-light",
@@ -60,8 +36,8 @@ export const RoadmapSection = () => {
     <section className="py-24 bg-gradient-to-b from-muted/30 to-background">
       <div className="container mx-auto px-4">
         <SectionTitle
-          title="Roadmap du projet"
-          subtitle="Planning de développement sur 8 semaines"
+          title={t("roadmap.title")}
+          subtitle={t("roadmap.subtitle")}
           centered
         />
 
@@ -100,11 +76,11 @@ export const RoadmapSection = () => {
         {/* Progress indicator */}
         <div className="mt-12 max-w-3xl mx-auto">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm font-medium text-muted-foreground">Progression globale</span>
-            <span className="text-sm font-bold text-primary">75%</span>
+            <span className="text-sm font-medium text-muted-foreground">{t("roadmap.progress.title")}</span>
+            <span className="text-sm font-bold text-primary">{t("roadmap.progress.value")}</span>
           </div>
           <div className="h-4 rounded-full bg-muted overflow-hidden">
-            <div className="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-1000 animate-fade-in" style={{ width: "75%" }} />
+            <div className="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-1000 animate-fade-in" style={{ width: t("roadmap.progress.value") }} />
           </div>
         </div>
       </div>

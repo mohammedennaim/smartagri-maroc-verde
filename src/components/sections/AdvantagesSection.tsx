@@ -1,38 +1,41 @@
 import { SectionTitle } from "@/components/SectionTitle";
 import { FeatureCard } from "@/components/FeatureCard";
 import { Brain, DollarSign, Zap, FileText, Sun, Languages } from "lucide-react";
+import { useLanguage } from "@/contexts/language";
 
 export const AdvantagesSection = () => {
+  const { t } = useLanguage();
+
   const advantages = [
     {
       icon: Brain,
-      title: "Prédictions IA 85%",
-      description: "Recommandations intelligentes basées sur l'historique et la météo pour optimiser vos cultures",
+      title: t("advantages.items.s1.title"),
+      description: t("advantages.items.s1.description"),
     },
     {
       icon: DollarSign,
-      title: "Analyse économique",
-      description: "Suivi détaillé des coûts et bénéfices par parcelle pour maximiser votre rentabilité",
+      title: t("advantages.items.s2.title"),
+      description: t("advantages.items.s2.description"),
     },
     {
       icon: Zap,
-      title: "Low-cost & Plug & Play",
-      description: "Installation simple sans expertise technique, accessible à tous les agriculteurs",
+      title: t("advantages.items.s3.title"),
+      description: t("advantages.items.s3.description"),
     },
     {
       icon: FileText,
-      title: "Journal de production",
-      description: "Historique complet de toutes les activités agricoles pour un suivi optimal",
+      title: t("advantages.items.s4.title"),
+      description: t("advantages.items.s4.description"),
     },
     {
       icon: Sun,
-      title: "Alimenté solaire",
-      description: "Autonomie énergétique totale grâce aux panneaux solaires et batteries",
+      title: t("advantages.items.s5.title"),
+      description: t("advantages.items.s5.description"),
     },
     {
       icon: Languages,
-      title: "Support multilingue",
-      description: "Interface en Arabe, Amazigh et Darija avec notifications vocales",
+      title: t("advantages.items.s6.title"),
+      description: t("advantages.items.s6.description"),
     },
   ];
 
@@ -40,8 +43,8 @@ export const AdvantagesSection = () => {
     <section className="py-24 bg-gradient-to-b from-muted/30 to-background">
       <div className="container mx-auto px-4">
         <SectionTitle
-          title="Avantages Compétitifs"
-          subtitle="Une solution complète qui se démarque sur tous les plans"
+          title={t("advantages.title")}
+          subtitle={t("advantages.subtitle")}
           centered
         />
 
@@ -55,6 +58,11 @@ export const AdvantagesSection = () => {
               <FeatureCard {...advantage} />
             </div>
           ))}
+        </div>
+        <div className="mt-12 text-center animate-fade-in-up">
+          <div className="inline-flex items-center gap-3 rounded-full bg-background/60 border border-border/60 px-5 py-2 text-sm text-muted-foreground shadow-sm">
+            {t("advantages.badge")}
+          </div>
         </div>
       </div>
     </section>

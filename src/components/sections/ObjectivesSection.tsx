@@ -1,37 +1,46 @@
 import { SectionTitle } from "@/components/SectionTitle";
 import { FeatureCard } from "@/components/FeatureCard";
 import { Target, Droplet, Languages, Brain } from "lucide-react";
+import { useLanguage } from "@/contexts/language";
 
 export const ObjectivesSection = () => {
+  const { t } = useLanguage();
+
   const objectives = [
     {
       icon: Target,
-      title: "Précision maximale",
-      description: "Mesure en temps réel de l'humidité du sol avec une précision de 95%, permettant une irrigation optimale",
+      title: t("objectives.items.s1.title"),
+      description: t("objectives.items.s1.description"),
     },
     {
       icon: Droplet,
-      title: "Économies substantielles",
-      description: "Réduction de 20-40% de la consommation d'eau et 30% d'économie d'énergie grâce à l'irrigation intelligente",
+      title: t("objectives.items.s2.title"),
+      description: t("objectives.items.s2.description"),
     },
     {
       icon: Languages,
-      title: "Accessibilité totale",
-      description: "Application multilingue (Arabe, Amazigh, Darija) avec notifications SMS et vocales pour tous les agriculteurs",
+      title: t("objectives.items.s3.title"),
+      description: t("objectives.items.s3.description"),
     },
     {
       icon: Brain,
-      title: "Intelligence artificielle",
-      description: "Recommandations prédictives avec 85% de précision basées sur les données météo et historiques",
+      title: t("objectives.items.s4.title"),
+      description: t("objectives.items.s4.description"),
     },
+  ];
+
+  const metrics = [
+    { value: t("objectives.metrics.m1.value"), label: t("objectives.metrics.m1.label"), description: t("objectives.metrics.m1.desc") },
+    { value: t("objectives.metrics.m2.value"), label: t("objectives.metrics.m2.label"), description: t("objectives.metrics.m2.desc") },
+    { value: t("objectives.metrics.m3.value"), label: t("objectives.metrics.m3.label"), description: t("objectives.metrics.m3.desc") },
   ];
 
   return (
     <section id="objectives" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <SectionTitle
-          title="Nos Objectifs"
-          subtitle="Une solution complète pour révolutionner l'agriculture marocaine"
+          title={t("objectives.title")}
+          subtitle={t("objectives.subtitle")}
           centered
         />
 
@@ -49,14 +58,10 @@ export const ObjectivesSection = () => {
 
         {/* Key Metrics */}
         <div className="mt-16 grid md:grid-cols-3 gap-8">
-          {[
-            { value: "95%", label: "Précision capteurs", description: "Mesures fiables" },
-            { value: "20-40%", label: "Économie d'eau", description: "Réduction consommation" },
-            { value: "85%", label: "Précision IA", description: "Recommandations" },
-          ].map((metric, index) => (
+          {metrics.map((metric, index) => (
             <div
               key={index}
-              className="text-center p-8 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border-2 border-primary/10 animate-scale-in"
+              className="text-center p-8 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border/60 animate-scale-in hover:-translate-y-1 hover:shadow-xl transition-all"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               <p className="text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">

@@ -2,14 +2,16 @@ import { SectionTitle } from "@/components/SectionTitle";
 import { StatCard } from "@/components/StatCard";
 import { Droplet, Zap, TrendingUp, Leaf, Users, DollarSign } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { useLanguage } from "@/contexts/language";
 
 export const ResultsSection = () => {
+  const { t } = useLanguage();
   return (
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <SectionTitle
-          title="Résultats Mesurés"
-          subtitle="Des impacts concrets et mesurables pour l'agriculture marocaine"
+          title={t("results.title")}
+          subtitle={t("results.subtitle")}
           centered
         />
 
@@ -18,22 +20,22 @@ export const ResultsSection = () => {
           <StatCard
             icon={Droplet}
             value="30-35%"
-            label="Économie d'eau"
-            trend="Par rapport méthodes traditionnelles"
+            label={t("results.metrics.m1.label")}
+            trend={t("results.metrics.m1.trend")}
             color="blue"
           />
           <StatCard
             icon={Zap}
             value="25-30%"
-            label="Réduction énergie"
-            trend="Grâce à l'alimentation solaire"
+            label={t("results.metrics.m2.label")}
+            trend={t("results.metrics.m2.trend")}
             color="orange"
           />
           <StatCard
             icon={TrendingUp}
             value="+20%"
-            label="Productivité"
-            trend="Augmentation moyenne des rendements"
+            label={t("results.metrics.m3.label")}
+            trend={t("results.metrics.m3.trend")}
             color="green"
           />
         </div>
@@ -45,13 +47,13 @@ export const ResultsSection = () => {
               <div className="p-3 rounded-lg bg-gradient-to-br from-primary to-primary-light">
                 <Leaf className="h-6 w-6 text-white" />
               </div>
-              <h3 className="text-lg font-bold text-foreground">Impact environnemental</h3>
+              <h3 className="text-lg font-bold text-foreground">{t("results.cards.environment.title")}</h3>
             </div>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>• Réduction CO2: -25% par hectare</li>
-              <li>• Préservation nappes phréatiques</li>
-              <li>• Moins d'engrais nécessaires</li>
-              <li>• Agriculture durable</li>
+              <li>• {t("results.cards.environment.i1")}</li>
+              <li>• {t("results.cards.environment.i2")}</li>
+              <li>• {t("results.cards.environment.i3")}</li>
+              <li>• {t("results.cards.environment.i4")}</li>
             </ul>
           </Card>
 
@@ -60,13 +62,13 @@ export const ResultsSection = () => {
               <div className="p-3 rounded-lg bg-gradient-to-br from-secondary to-secondary-light">
                 <Users className="h-6 w-6 text-white" />
               </div>
-              <h3 className="text-lg font-bold text-foreground">Impact social</h3>
+              <h3 className="text-lg font-bold text-foreground">{t("results.cards.social.title")}</h3>
             </div>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>• Accessibilité pour tous</li>
-              <li>• Formation & autonomisation</li>
-              <li>• Création d'emplois tech</li>
-              <li>• Sécurité alimentaire</li>
+              <li>• {t("results.cards.social.i1")}</li>
+              <li>• {t("results.cards.social.i2")}</li>
+              <li>• {t("results.cards.social.i3")}</li>
+              <li>• {t("results.cards.social.i4")}</li>
             </ul>
           </Card>
 
@@ -75,13 +77,13 @@ export const ResultsSection = () => {
               <div className="p-3 rounded-lg bg-gradient-to-br from-accent to-accent/80">
                 <DollarSign className="h-6 w-6 text-white" />
               </div>
-              <h3 className="text-lg font-bold text-foreground">Impact économique</h3>
+              <h3 className="text-lg font-bold text-foreground">{t("results.cards.economic.title")}</h3>
             </div>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>• ROI: 3-4 mois</li>
-              <li>• Revenus agricoles +15-25%</li>
-              <li>• Réduction coûts opérationnels</li>
-              <li>• Compétitivité accrue</li>
+              <li>• {t("results.cards.economic.i1")}</li>
+              <li>• {t("results.cards.economic.i2")}</li>
+              <li>• {t("results.cards.economic.i3")}</li>
+              <li>• {t("results.cards.economic.i4")}</li>
             </ul>
           </Card>
         </div>
@@ -92,17 +94,12 @@ export const ResultsSection = () => {
             <div className="inline-flex p-4 rounded-full bg-gradient-to-br from-primary to-secondary mb-6">
               <TrendingUp className="h-8 w-8 text-white" />
             </div>
-            <h3 className="text-3xl font-bold text-foreground mb-4">
-              Témoignage pilote
-            </h3>
+            <h3 className="text-3xl font-bold text-foreground mb-4">{t("results.success.title")}</h3>
             <blockquote className="text-lg text-muted-foreground italic mb-4">
-              "Grâce à SmartAgri, j'ai réduit ma facture d'eau de 40% et mes tomates sont plus belles que jamais. 
-              L'application en Darija est très facile à utiliser, même pour moi qui ne suis pas technicien."
+              {t("results.success.quote")}
             </blockquote>
-            <p className="font-semibold text-foreground">
-              Mohammed, agriculteur à Souss-Massa
-            </p>
-            <p className="text-sm text-muted-foreground">5 hectares de culture maraîchère</p>
+            <p className="font-semibold text-foreground">{t("results.success.author")}</p>
+            <p className="text-sm text-muted-foreground">{t("results.success.meta")}</p>
           </div>
         </Card>
       </div>
