@@ -195,8 +195,8 @@ export const CTASection = () => {
               <div className="space-y-4 text-sm">
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-primary" />
-                  <a href="mailto:contact@smartagrimaroc.ma" className="text-muted-foreground hover:text-primary transition-colors">
-                    contact@smartagrimaroc.ma
+                  <a href="mailto:contact@IrigMA.ma" className="text-muted-foreground hover:text-primary transition-colors">
+                    contact@IrigMA.ma
                   </a>
                 </div>
                 <div className="flex items-center gap-3">

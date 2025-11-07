@@ -10,7 +10,7 @@ type Message = { role: "user" | "assistant"; content: string };
 export const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { role: "assistant", content: "Bonjour! Je suis SmartAgri Assistant. Comment puis-je vous aider aujourd'hui? 🌱" }
+    { role: "assistant", content: "Bonjour! Je suis IrigMA Assistant. Comment puis-je vous aider aujourd'hui? 🌱" }
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -133,7 +133,7 @@ export const ChatBot = () => {
                 <MessageCircle className="h-5 w-5 text-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-foreground">SmartAgri Assistant</h3>
+                <h3 className="font-semibold text-foreground">IrigMA Assistant</h3>
                 <p className="text-xs text-muted-foreground">En ligne</p>
               </div>
             </div>

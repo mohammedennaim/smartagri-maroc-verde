@@ -1,6 +1,6 @@
 const translations = {
   en: {
-    brand: "SmartAgri",
+    brand: "IrigMA",
     nav: {
       home: "Home",
       problem: "Problem",
@@ -10,7 +10,7 @@ const translations = {
       contact: "Contact",
     },
     hero: {
-      title: "SmartAgri Maroc",
+  title: "IrigMA",
       subtitle: "Intelligent irrigation & farm monitoring system",
       lead: "A low-cost solution adapted to the Moroccan context",
       discover: "Discover the solution",
@@ -258,7 +258,7 @@ const translations = {
       },
       success: {
         title: "Pilot testimonial",
-        quote: "\"With SmartAgri I reduced my water bill by 40% and my tomatoes are better than ever. The Darija app is easy to use, even for non-technical farmers.\"",
+  quote: "\"With IrigMA I reduced my water bill by 40% and my tomatoes are better than ever. The Darija app is easy to use, even for non-technical farmers.\"",
         author: "Mohammed, farmer in Souss-Massa",
         meta: "5 hectares of vegetable crops",
       },
@@ -268,11 +268,11 @@ const translations = {
       title: "Conclusion",
       subtitle: "Summary and next steps",
       paragraphs: {
-        p1: "SmartAgri Maroc provides an affordable, scalable solution to water scarcity and productivity challenges faced by Moroccan farmers.",
+  p1: "IrigMA Maroc provides an affordable, scalable solution to water scarcity and productivity challenges faced by Moroccan farmers.",
         p2: "With rapid ROI, multilingual support and solar autonomy, the system is designed for wide adoption from smallholders to commercial farms.",
         p3: "Next steps: pilot deployments, local manufacturing partnerships, and ongoing data-driven improvements.",
       },
-      cta: { contact: "Contact us to join the pilot", invest: "Request investment pack" },
+  cta: { contact: "Contact us to join the pilot", invest: "Request investment pack" },
       cards: {
         results: { title: "Measured results", description: "Concrete savings and environmental benefits demonstrated in pilots" },
         solution: { title: "Our solution", description: "Low-cost, solar-powered, multilingual system for smallholders" },
@@ -319,12 +319,24 @@ const translations = {
     budget: {
       title: "Budget & ROI",
       subtitle: "A profitable investment within months",
+      pie: {
+        title: "Budget breakdown",
+        total_label: "Total",
+        center_label: "Budget",
+      },
         items: {
           sensors: "Sensors",
           esp: "ESP32 & modules",
           solar: "Solar & battery",
           relays: "Relays & valves",
           enclosure: "Enclosure & cables",
+        },
+        items_desc: {
+          sensors: "Soil moisture and temperature sensors",
+          esp: "ESP32 microcontroller and modules",
+          solar: "Solar panel and battery pack",
+          relays: "Relay board and valve control",
+          enclosure: "Waterproof IP67 enclosure",
         },
         prototype: {
           heading: "Prototype cost",
@@ -343,6 +355,10 @@ const translations = {
           reachedIn: "ROI reached in",
           months: "3-4 months",
           forArea: "For a 1 hectare farm",
+          title: "Return on investment",
+          break_even_label: "Break-even",
+          break_even_months: "Months 5-6",
+          profit_label: "Profit",
         },
         price: {
           estimated: "Estimated selling price:",
@@ -351,7 +367,7 @@ const translations = {
         },
         comparison: {
           title: "Comparison with competitors",
-          headers: { criterion: "Criterion", our: "SmartAgri Maroc", competitor: "Competitor" },
+    headers: { criterion: "Criterion", our: "IrigMA", competitor: "Competitor" },
           rows: {
             price: { criterion: "Price", our: "2 500-3 000 DH", competitor: "5 000-8 000 DH" },
             multilang: { criterion: "Multilingual support", our: "✓ Darija included", competitor: "✗" },
@@ -376,11 +392,11 @@ const translations = {
       badge: "30-day satisfaction guarantee • WhatsApp support • Docs in Darija",
     },
     footer: {
-      copyright: "© 2025 SmartAgri Maroc. All rights reserved.",
+      copyright: "© 2025 IrigMA. All rights reserved.",
     },
   },
   ar: {
-    brand: "سمارت أغري المغرب",
+    brand: "إجريما المغرب",
     nav: {
       home: "الرئيسية",
       problem: "المشكلة",
@@ -390,7 +406,7 @@ const translations = {
       contact: "تواصل",
     },
     hero: {
-      title: "سمارت أغري المغرب",
+  title: "إجريما المغرب",
       subtitle: "نظام ذكي للري ومراقبة المزارع",
       lead: "حل منخفض التكلفة ومتكيف مع السياق المغربي",
       discover: "اكتشف الحل",
@@ -635,7 +651,7 @@ const translations = {
       },
       success: {
         title: "شهادة تجريبية",
-        quote: "\"بفضل SmartAgri خفضت فاتورة المياه بنسبة 40% وطماطمي أفضل من أي وقت مضى. تطبيق الدارجة سهل الاستخدام حتى لغير الفنيين.\"",
+  quote: "\"بفضل إجريما خفضت فاتورة المياه بنسبة 40% وطماطمي أفضل من أي وقت مضى. تطبيق الدارجة سهل الاستخدام حتى لغير الفنيين.\"",
         author: "محمد، مزارع في سوس ماسة",
         meta: "5 هكتارات من الإنتاج الخضري",
       },
@@ -645,7 +661,7 @@ const translations = {
       title: "الخلاصة",
       subtitle: "ملخص والخطوات التالية",
       paragraphs: {
-        p1: "يوفر SmartAgri Maroc حلاً ميسور التكلفة وقابلًا للتوسع لمشكلات ندرة المياه والإنتاجية التي يواجهها المزارعون المغاربة.",
+  p1: "يوفر إجريما حلاً ميسور التكلفة وقابلًا للتوسع لمشكلات ندرة المياه والإنتاجية التي يواجهها المزارعون المغاربة.",
         p2: "مع عائد استثمار سريع، ودعم لغات متعددة واستقلالية بالطاقة الشمسية، صُمم النظام لاعتماد واسع من صغار المزارعين إلى المزارع التجارية.",
         p3: "الخطوات التالية: تنفيذ تجارب ميدانية، شراكات تصنيع محلية، وتحسينات مستمرة مدفوعة بالبيانات.",
       },
@@ -691,7 +707,7 @@ const translations = {
         footer: "حل مخصص مع دعم متميز",
       },
     },
-    budget: {
+  budget: {
       title: "الميزانية والعائد",
       subtitle: "استثمار مربح خلال أشهر",
       items: {
@@ -700,6 +716,13 @@ const translations = {
         solar: "الخلايا الشمسية والبطارية",
         relays: "المرابط والصمامات",
         enclosure: "الغطاء والكوابل",
+      },
+      items_desc: {
+        sensors: "أجهزة قياس رطوبة التربة ودرجة الحرارة",
+        esp: "متَحكم ESP32 والملحقات",
+        solar: "لوحة شمسية وحزمة بطارية",
+        relays: "لوحة ريليهات للتحكم في الصمامات",
+        enclosure: "صندوق محمي بمعيار IP67",
       },
       prototype: {
         heading: "تكلفة النموذج الأولي",
@@ -726,7 +749,7 @@ const translations = {
       },
       comparison: {
         title: "المقارنة مع المنافسين",
-        headers: { criterion: "المعيار", our: "SmartAgri Maroc", competitor: "المنافس" },
+  headers: { criterion: "المعيار", our: "إجريما", competitor: "المنافس" },
         rows: {
           price: { criterion: "السعر", our: "2 500-3 000 درهم", competitor: "5 000-8 000 درهم" },
           multilang: { criterion: "دعم لغات متعددة", our: "✓ الدارجة مدعومة", competitor: "✗" },
@@ -751,7 +774,7 @@ const translations = {
       badge: "ضمان رضا 30 يوم • دعم واتساب • توثيق بالدارجة",
     },
     footer: {
-      copyright: "© 2025 سمارت أغري المغرب. كل الحقوق محفوظة.",
+      copyright: "© 2025 إجريما المغرب. كل الحقوق محفوظة.",
     },
   },
 };

@@ -46,9 +46,9 @@ export const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className="flex items-center gap-3 cursor-pointer group" onClick={() => scrollToSection("#home")}>
-            <img src="/logo.svg" alt="SmartAgri Maroc" className="h-8 w-8 rounded-lg shadow-md group-hover:scale-110 transition-transform" />
+            <img src="/logo.svg" alt="IrigMA Maroc" className="h-8 w-8 rounded-lg shadow-md group-hover:scale-110 transition-transform" />
             <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-primary via-primary-light to-secondary bg-clip-text text-transparent">
-              SmartAgri
+              IrigMA
             </span>
           </div>
 
